@@ -12,8 +12,15 @@
 
     <script src="teglalap_kerulet_terulet_tuple.js"></script>
     <script>
-        document.write(`A téglalap kerülete és területe: ${TeglalapTeruletKerulet(5,10)}`);
-        console.log(`A téglalap kerülete és területe: ${TeglalapTeruletKerulet(5,10)}`);
+        //Egyben kííratva
+        document.write(`A téglalap kerülete és területe: ${TeglalapTeruletKerulet(5, 10)}<hr>`);
+        console.log(`A téglalap kerülete és területe ${TeglalapTeruletKerulet(5, 10)}`);
+
+        //Külön kííratva
+        document.write(`A téglalap kerülete ${TeglalapTeruletKerulet(5, 10)[0]}`);
+        document.write(`<br>A téglalap területe ${TeglalapTeruletKerulet(5, 10)[1]}`);
+        console.log(`A téglalap kerülete ${TeglalapTeruletKerulet(5, 10)[0]}`);
+        console.log(`A téglalap területe ${TeglalapTeruletKerulet(5, 10)[1]}`);
     </script>
 </body>
 
