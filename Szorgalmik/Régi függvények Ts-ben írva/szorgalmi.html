@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szorgalmi</title>
+</head>
+
+<body>
+    <script src="parosSzamIntervallGenerator.js"></script>
+    <script src="intervallumTombGenerator.js"></script>
+    <script src="halmazMuvelet_AkulB.js"></script>
+    <script src="halmazMuvelet_Inverz.js"></script>
+    <script src="halmazMuvelet_Metszet.js"></script>
+    <script src="halmazMuvelet_Unio.js"></script>
+
+    <script>
+        //Intervallum Generált páros szám
+        let generaltParosSzam = paroszSzamIntervallumGenerator(1, 100);
+        document.write("Random generált páros szám:" + generaltParosSzam);
+
+        document.write("<hr>");
+
+        //Intervallum tömb generátor
+        let generaltTomb = TombGenerator(5, 1, 100);
+        TombKiiro(generaltTomb);
+
+        document.write("<hr>");
+
+        //Halmazművelet A különbség B
+
+        let tombA = TombGenerator(20, 1, 100);
+        let tombB = TombGenerator(20, 1, 100);
+        let aKulB = AKulonbsegB(tombA, tombB);
+        document.write("[A] tömb elemei:" + tombA);
+        document.write("<br>[B] tömb elemei:" + tombB);
+        document.write("<br>[aKulB] tömb elemei:" + aKulB);
+
+        document.write("<hr>");
+
+        //Halmazűvelet Két tömb inverze
+
+        let tomb1 = TombGenerator(20, 1, 100);
+        let tomb2 = TombGenerator(20, 1, 100);
+        let inverz = KetTombInverz(tomb1, tomb2);
+        document.write("A [tomb1] elemei:" + tomb1);
+        document.write("<br>A [tömb2] elemei:" + tomb2);
+        document.write("<br>[inverz] tömb elemei:" + inverz);
+
+        document.write("<hr>");
+
+        //Halmazűvelet Két tömb metszete
+        let tombC = TombGenerator(20, 1, 100);
+        let tombD = TombGenerator(20, 1, 100);
+        let metszet = Metszet(tombC, tombD);
+        document.write("A [C] tömb elemei:" + tombC);
+        document.write("<br>A [D] tömb elemei:" + tombD);
+        document.write("<br>[metszet] tömb elemei:" + metszet);
+
+        document.write("<hr>");
+
+        //Halmazűvelet Két tömb uniója
+        let tombE = TombGenerator(20, 1, 100);
+        let tombF = TombGenerator(20, 1, 100);
+        let unio = Unio(tombE, tombF);
+        document.write("A [E] tömb elemei:" + tombE);
+        document.write("<br>A [F] tömb elemei:" + tombF);
+        document.write("<br>[unio] tömb elemei:" + unio);
+    </script>
+</body>
+
+</html>
