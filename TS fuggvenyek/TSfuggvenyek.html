@@ -25,6 +25,12 @@
         TeglalapTeruletKerulet(5, 10);
         document.write("<br>" + ParosE(5));
         document.write("<br>" + PrimSzamGenerator(1, 100));
+        document.write("<hr>");
+        //Összegzés tétele
+
+        let tomb = TombGenerator(10, 1, 50);
+        let tombOsszeg = Osszegzes(tomb);
+        document.write(`A generált tömbünk(${tomb}) elemeinek összege: ${tombOsszeg}`);
     </script>
 </body>
 

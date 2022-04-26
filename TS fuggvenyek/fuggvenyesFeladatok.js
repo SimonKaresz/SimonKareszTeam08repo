@@ -46,3 +46,39 @@ function PrimSzamGenerator(hatar1, hatar2) {
     return generaltSzam;
 }
 //Téglalap terület,kerület Tuple típusú visszatérési értékkel
+//Szorgalmi_ Tömb generátor
+function Kisebb(szam1, szam2) {
+    if (szam1 < szam2) {
+        return szam1;
+    }
+    else {
+        return szam2;
+    }
+}
+function Nagyobb(szam1, szam2) {
+    if (szam1 > szam2) {
+        return szam1;
+    }
+    else {
+        return szam2;
+    }
+}
+function RandomEgesz(alsoHatar, felsoHatar) {
+    var generaltSZam = Math.round(Math.random() * (felsoHatar - alsoHatar)) + alsoHatar;
+    return generaltSZam;
+}
+function TombGenerator(meret, hatar1, hatar2) {
+    var generaltTomb = [];
+    for (var i = 0; i < meret; i++) {
+        generaltTomb.push(RandomEgesz(Kisebb(hatar1, hatar2), Nagyobb(hatar1, hatar2)));
+    }
+    return generaltTomb;
+}
+//Összegzes tétele
+function Osszegzes(tomb) {
+    var osszeg = 0;
+    for (var i = 0; i < tomb.length; i++) {
+        osszeg += tomb[i];
+    }
+    return osszeg;
+}
