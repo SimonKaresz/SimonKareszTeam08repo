@@ -31,7 +31,7 @@ function SzovegesErtekeles(jegy: number): [string, string] {
 //3.feladat
 
 function HarommalOszthatokSzama(vizsgaltTomb: number[]): number {
-    let harommalOszthatok = [];
+    let harommalOszthatok: number[] = [];
     for (let i = 0; i < vizsgaltTomb.length; i++) {
         if (vizsgaltTomb[i] % 3 == 0) {
             harommalOszthatok.push(vizsgaltTomb[i]);
