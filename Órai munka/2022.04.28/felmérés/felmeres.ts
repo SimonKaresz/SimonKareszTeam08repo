@@ -44,8 +44,20 @@ function HarommalOszthatokSzama(vizsgaltTomb: number[]): number {
 
 function Nyeroszamok(mennyiseg: number, alsoHatar: number, felsoHatar: number): number[] {
     let nyeroszamok: number[] = [];
-    for (let i = 0; i < mennyiseg; i++) {
-
+    //Nem saját megoldás
+    let i = 0;
+    while (i < mennyiseg) {
+        let generaltSzam: number = Math.round(Math.random() * (felsoHatar - alsoHatar)) + alsoHatar;
+        let szerepelE: boolean = false;
+        for (let j = 0; j < nyeroszamok.length; j++) {
+            if (nyeroszamok[j] == generaltSzam) {
+                szerepelE = true;
+            }
+        }
+        if (szerepelE == false) {
+            nyeroszamok.push(generaltSzam);
+            i++;
+        }
     }
     return nyeroszamok;
 }

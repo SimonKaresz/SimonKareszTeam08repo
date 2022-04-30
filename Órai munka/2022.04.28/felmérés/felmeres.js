@@ -37,7 +37,20 @@ function HarommalOszthatokSzama(vizsgaltTomb) {
 //4.feladat
 function Nyeroszamok(mennyiseg, alsoHatar, felsoHatar) {
     var nyeroszamok = [];
-    for (var i = 0; i < mennyiseg; i++) {
+    //Nem saját megoldás
+    var i = 0;
+    while (i < mennyiseg) {
+        var generaltSzam = Math.round(Math.random() * (felsoHatar - alsoHatar)) + alsoHatar;
+        var szerepelE = false;
+        for (var j = 0; j < nyeroszamok.length; j++) {
+            if (nyeroszamok[j] == generaltSzam) {
+                szerepelE = true;
+            }
+        }
+        if (szerepelE == false) {
+            nyeroszamok.push(generaltSzam);
+            i++;
+        }
     }
     return nyeroszamok;
 }
