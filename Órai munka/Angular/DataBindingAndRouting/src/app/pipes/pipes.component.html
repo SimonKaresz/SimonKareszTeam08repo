@@ -1,0 +1,46 @@
+<h1>Pipe-ok használata</h1>
+<h2>Szövegfromázó elemek</h2>
+<h3>Sima szöveg: {{mintaSzoveg}}</h3>
+<p>Nagybetűssé alakított szöveg: {{mintaSzoveg | uppercase}}</p>
+<p>Kisbetűssé alakított szöveg: {{mintaSzoveg | lowercase}}</p>
+<p>Nagykezdőbetűssé(címmé alakított) alakított szöveg: {{mintaSzoveg | titlecase}}</p>
+<hr>
+<h2>Számok formázása</h2>
+<h3>Eredeti szám: {{valosSzam}}</h3>
+<p>Egész számmá kerekítés: {{valosSzam | number: '1.0-0'}}</p>
+<p>Vezető nullák beszúrása: {{valosSzam | number: '3.0-0'}}</p>
+<p>Tizedes érték megadása: {{valosSzam | number: '1.0-2'}}</p>
+<hr>
+<h2>Százalékos formátum megadása</h2>
+<h3>Eredeti százalékos érték: {{szazalekosErtek}}</h3>
+<p>Egész százalékos érték:{{szazalekosErtek | percent}}</p>
+<p>Tizedes értékes százalékos érték:{{szazalekosErtek | percent : '1.0-2'}}</p>
+<hr>
+<h2>Pénz formátum megadása</h2>
+<h3>Eredeti pénz érték: {{penzErtek}}</h3>
+<p>Dollár pénz érték megjelenítés{{penzErtek | currency: 'USD'}}</p>
+<p>Euro pénz érték megjelenítés{{penzErtek | currency: 'EUR'}}</p>
+<p>Font pénz érték megjelenítés{{penzErtek | currency: 'GBP'}}</p>
+<p>Forint pénz érték megjelenítés{{penzErtek | currency: 'HUF'}}</p>
+<p>Dollár pénz érték megjelenítés{{penzErtek | currency: 'USD': 'symbol':'1.0-3'}}</p>
+<hr>
+<h2>Idő megjelenítésének formátumai</h2>
+<h3>Eredeti idő formátum:{{datumErtek}}</h3>
+<h4>Előre beállított minták</h4>
+<p>Rövid teljes dátum formázása: {{datumErtek | date:'short'}}</p>
+<p>Hosszú teljes dátum formázása: {{datumErtek | date:'long'}}</p>
+<p>Rövid dátum formázása: {{datumErtek | date:'shortDate'}}</p>
+<p>Hosszú dátum formázása: {{datumErtek | date:'fullDate'}}</p>
+<p>Hosszú idő formázása: {{datumErtek | date:'shortTime'}}</p>
+<p>Hosszú idő formázása: {{datumErtek | date:'fullTime'}}</p>
+
+<h4>Egyedi minták,alapelemek</h4>
+<p>Csak év megjelenítés: {{datumErtek | date:'YYYY'}}</p>
+<p>Csak hónap megjelenítés: {{datumErtek | date:'MM'}}</p>
+<p>Csak nap megjelenítés: {{datumErtek | date:'EEEE'}}</p>
+<p>Csak nap(szöveggel) megjelenítés: {{datumErtek | date:'dd'}}</p>
+<p>Év,hónap,nap megjelenítés: {{datumErtek | date:'YYYY-MM-dd'}}</p>
+<p>Csak óra: {{datumErtek | date:'hh'}}</p>
+<p>Csak perc: {{datumErtek | date:'mm'}}</p>
+<p>Csak másodperc: {{datumErtek | date:'ss'}}</p>
+<p>Óra,perc,másodperc: {{datumErtek | date:'hh:mm:ss'}}</p>

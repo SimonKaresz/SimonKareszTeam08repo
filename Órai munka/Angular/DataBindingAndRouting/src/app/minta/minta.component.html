@@ -1,3 +1,4 @@
+<!-- 2022.05.03 -->
 <h1>DataBinding minta aloldal</h1>
 <h2>Interpolation(Egyszerű érték átadás)</h2>
 <!-- {{value}} -->
@@ -27,3 +28,18 @@
 <p>A négyzet a oldalának mérete:{{aOldal}} cm</p>
 <p>A négyzet kerülete:{{4*aOldal}} cm</p>
 <p>A négyzet területe:{{aOldal*aOldal}} cm<sup>2</sup></p>
+<hr>
+<!-- 2022.05.05 -->
+<h4>2022.05.05</h4>
+
+<p>Tömbünk legelső eleme: {{bevasarloLista[0]}}</p>
+<p>Tömb összes eleme:</p>
+<ul *ngFor="let gyumolcs of bevasarloLista">
+  <li>{{gyumolcs}}</li>
+</ul>
+
+<p>{{interfaceElem.nev}} [{{interfaceElem.kor}}] Beosztása:{{interfaceElem.beosztas}}</p>
+
+<ul *ngFor="let dolgozo of interfaceTomb">
+  <li>{{dolgozo.nev}} ({{dolgozo.fizetes}}ft)</li>
+</ul>
