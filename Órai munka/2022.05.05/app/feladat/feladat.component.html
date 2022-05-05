@@ -1,13 +1,17 @@
 <p>DataBinding feladatok</p>
-
+<h2>1.</h2>
 <!-- Angular kép elhelyezése a netről linként adjátok meg és adjatok neki alt illetve title és width tulajdosnágot-->
 
 <img [src]="utvonal" [alt]="cim" [title]="cim" [width]="meret">
 <img src="{{utvonal}}" alt="{{cim}}" title="{{cim}}" width="{{meret}}">
+<hr>
 <!-- kép csere -->
+<h2>2.</h2>
 <button class="btn btn-primary" (click)="react()">Kép lecserélése</button>
+<hr>
 
 <!-- téglalap kerület terület -->
+<h2>3.</h2>
 <h3>Téglalap kerület,terület</h3>
 <label for="oldalA">A oldal mérete</label>
 <input type="number" [(ngModel)]="aOldal" id="oldalA" class="form-control">
@@ -17,3 +21,25 @@
 <p>A téglalap b oldalának mérete:{{bOldal}} cm</p>
 <p>A téglalap kerülete:{{2*(aOldal+bOldal)}} cm</p>
 <p>A téglalap területe:{{aOldal*bOldal}} cm<sup>2</sup></p>
+
+<!-- Szorgalmi rész -->
+<h3>Szorgalmi feladat</h3>
+<table class="table table-dark table-striped table-hover text-center">
+  <thead>
+    <tr>
+      <th>Név</th>
+      <th>Kor</th>
+      <th>Fizetés</th>
+      <th>Beosztás</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dolgozo of interfaceTomb">
+
+      <td>{{dolgozo.nev}}</td>
+      <td>{{dolgozo.kor}}</td>
+      <td>{{dolgozo.fizetes}} ft</td>
+      <td>{{dolgozo.beosztas}}</td>
+    </tr>
+  </tbody>
+</table>
