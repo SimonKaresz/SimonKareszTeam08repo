@@ -2,5 +2,18 @@
 
 <!-- Angular kép elhelyezése a netről linként adjátok meg és adjatok neki alt illetve title és width tulajdosnágot-->
 
-<img [src]="utvonal" [alt]="cim" [title]="cim" [width]="meret" (click)="react()">
-<img src="{{utvonal}}" alt="{{cim}}" title="{{cim}}" width="{{meret}}" (click)="react()">
+<img [src]="utvonal" [alt]="cim" [title]="cim" [width]="meret">
+<img src="{{utvonal}}" alt="{{cim}}" title="{{cim}}" width="{{meret}}">
+<!-- kép csere -->
+<button class="btn btn-primary" (click)="react()">Kép lecserélése</button>
+
+<!-- téglalap kerület terület -->
+<h3>Téglalap kerület,terület</h3>
+<label for="oldalA">A oldal mérete</label>
+<input type="number" [(ngModel)]="aOldal" id="oldalA" class="form-control">
+<label for="oldalB">B oldal mérete</label>
+<input type="number" [(ngModel)]="bOldal" id="oldalB" class="form-control">
+<p>A téglalap a oldalának mérete:{{aOldal}} cm</p>
+<p>A téglalap b oldalának mérete:{{bOldal}} cm</p>
+<p>A téglalap kerülete:{{2*(aOldal+bOldal)}} cm</p>
+<p>A téglalap területe:{{aOldal*bOldal}} cm<sup>2</sup></p>

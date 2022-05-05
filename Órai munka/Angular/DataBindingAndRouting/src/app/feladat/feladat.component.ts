@@ -20,4 +20,12 @@ export class FeladatComponent implements OnInit {
     this.utvonal = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png';
     this.cim = 'react';
   }
+
+  //téglalap kerület terület
+
+  aOldal: number = 1;
+  bOldal: number = 2;
+
 }
+
+
