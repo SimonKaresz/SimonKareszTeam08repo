@@ -1,13 +1,17 @@
 <p>DataBinding feladatok</p>
-
+<h2>1.</h2>
 <!-- Angular kép elhelyezése a netről linként adjátok meg és adjatok neki alt illetve title és width tulajdosnágot-->
 
 <img [src]="utvonal" [alt]="cim" [title]="cim" [width]="meret">
 <img src="{{utvonal}}" alt="{{cim}}" title="{{cim}}" width="{{meret}}">
+<hr>
 <!-- kép csere -->
+<h2>2.</h2>
 <button class="btn btn-primary" (click)="react()">Kép lecserélése</button>
+<hr>
 
 <!-- téglalap kerület terület -->
+<h2>3.</h2>
 <h3>Téglalap kerület,terület</h3>
 <label for="oldalA">A oldal mérete</label>
 <input type="number" [(ngModel)]="aOldal" id="oldalA" class="form-control">
