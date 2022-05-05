@@ -2,5 +2,7 @@
 
 <!-- Angular kép elhelyezése a netről linként adjátok meg és adjatok neki alt illetve title és width tulajdosnágot-->
 
-<img [src]="utvonal" [alt]="cim" [title]="cim" [width]="meret" (click)="react()">
-<img src="{{utvonal}}" alt="{{cim}}" title="{{cim}}" width="{{meret}}" (click)="react()">
+<img [src]="utvonal" [alt]="cim" [title]="cim" [width]="meret">
+<img src="{{utvonal}}" alt="{{cim}}" title="{{cim}}" width="{{meret}}">
+
+<button class="btn btn-primary" (click)="react()">Kép lecserélése</button>
