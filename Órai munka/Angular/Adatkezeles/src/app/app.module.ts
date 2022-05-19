@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ImportalasComponent } from './importalas/importalas.component';
+import { HelsinkiFeladatComponent } from './helsinki-feladat/helsinki-feladat.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ImportalasComponent
+    ImportalasComponent,
+    HelsinkiFeladatComponent
   ],
   imports: [
     BrowserModule,
