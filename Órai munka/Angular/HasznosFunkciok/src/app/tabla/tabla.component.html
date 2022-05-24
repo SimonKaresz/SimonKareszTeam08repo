@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  <h1>Dinamikusan szűrt táblázat</h1>
+
+  <div class="form-group mb-2">
+    <label for="tablazatSzuroFeltetel">Táblázat szűrése</label>
+    <input type="text" id="tablazatSzuroFeltetel" class="form-control" placeholder="Keresés"
+      [(ngModel)]="tablazatSzuro">
+  </div>
+  <table class="table table-dark table-striped table-sm table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Név</th>
+        <th>Életkor</th>
+        <th>Beosztás</th>
+        <th>Fizetés</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dolgozo of DolgozoTombObjektum | filter:tablazatSzuro">
+        <td>{{dolgozo.nev}}</td>
+        <td>{{dolgozo.kor}}</td>
+        <td>{{dolgozo.beosztas}}</td>
+        <td>{{dolgozo.fizetes}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
