@@ -35,6 +35,13 @@
 </form>
 
 
+
+
+<div class="form-group">
+  <label for="tablazatSzuroElem">Táblázat szűrése</label>
+  <input type="text" id="tablazatSzuroElem" class="form-control" placeholder="Keresés" [(ngModel)]="tablazatSzuro">
+</div>
+
 <!-- Szorgalmi: kiszűrni és megjeleníteni a sportágakat legördülő listába -->
 
 <table class="table table-dark table-striped table-bordered table-hover text-center">
@@ -47,7 +54,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let helsinki of HelsinkiEredmenyek">
+    <tr *ngFor="let helsinki of HelsinkiEredmenyek|filter:tablazatSzuro">
       <td>{{helsinki.helyezes}}.</td>
       <td>{{helsinki.csapatMeret}} fő</td>
       <td>{{helsinki.sportag}}</td>

@@ -12,6 +12,8 @@ export class HelsinkiFeladatComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  tablazatSzuro!: string;
+
   eredmenyek = [
     "1 1 atletika kalapacsvetes",
     "1 1 uszas 400m_gyorsuszas",
@@ -125,7 +127,12 @@ export class HelsinkiFeladatComponent implements OnInit {
     return Sportagak;
   }
   SportagakOpciok = this.Sportok(this.HelsinkiEredmenyek);
+
+  //Szorgalmifeladat - 8.-9. lépés
+  //Sportágak mellet gyűjtsd ki a sportághoz tartozó versenyszámókat is összetett adatszerkezet használata ajánlott
 }
+
+
 
 
 
