@@ -130,6 +130,32 @@ export class HelsinkiFeladatComponent implements OnInit {
 
   //Szorgalmifeladat - 8.-9. lépés
   //Sportágak mellet gyűjtsd ki a sportághoz tartozó versenyszámókat is összetett adatszerkezet használata ajánlott
+
+  SportagListazo(vizsgaltTomb: Helsinki[]): SportagAndVersenySzam[] {
+    let sportagAdatok: SportagAndVersenySzam[] = [];
+    let sportagIndex!: number;
+    for (let i = 0; i < vizsgaltTomb.length; i++) {
+      let szerepelE: boolean = false;
+      for (let j = 0; j < sportagAdatok.length; j++) {
+        if (vizsgaltTomb[i].sportag == sportagAdatok[j].sportagNeve) {
+          szerepelE = true;
+          sportagIndex = j;
+        }
+      }
+      if (!szerepelE) {
+        sportagAdatok.push(new SportagAndVersenySzam(vizsgaltTomb[i].sportag, vizsgaltTomb[i].versenySzam));
+      }
+      else {
+        if (!sportagAdatok[sportagIndex].versenySzamok.includes(vizsgaltTomb[i].versenySzam)) {
+          sportagAdatok[sportagIndex].versenySzamok.push(vizsgaltTomb[i].versenySzam)
+        }
+      }
+    }
+    return sportagAdatok;
+  }
+
+  Sportagak = this.SportagListazo(this.HelsinkiEredmenyek);
+
 }
 
 
@@ -156,6 +182,20 @@ export class Helsinki implements Eredmenyek {
     this.sportag = sportag;
     this.versenySzam = versenySzam;
   }
+}
 
+export interface AdottSportag {
+  sportagNeve: string;
+  versenySzamok: string[];
+}
 
+export class SportagAndVersenySzam implements AdottSportag {
+  sportagNeve: string;
+  versenySzamok: string[];
+
+  constructor(sportagNeve: string, versenySzam: string) {
+    this.sportagNeve = sportagNeve;
+    this.versenySzamok = [];
+    this.versenySzamok.push(versenySzam);
+  }
 }

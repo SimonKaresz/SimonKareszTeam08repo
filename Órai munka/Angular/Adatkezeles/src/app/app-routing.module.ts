@@ -5,7 +5,8 @@ import { ImportalasComponent } from './importalas/importalas.component';
 
 const routes: Routes = [
   { path: 'kekturaimport', component: ImportalasComponent },
-  { path: 'helsinkifeladat', component: HelsinkiFeladatComponent }
+  { path: 'helsinkifeladat', component: HelsinkiFeladatComponent },
+  { path: '', redirectTo: 'helsinkifeladat', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -1,0 +1,68 @@
+<h2>Reactive Form(űrlap) létrehozása</h2>
+
+<p>Megadott adatok{{form.value | json}}</p>
+<hr>
+<p>Dolgozo neve: {{this.form.controls['dolgozoNev'].value}}</p>
+<p>Dolgozo életkora: {{this.form.controls['dolgozoEletkor'].value}} év</p>
+<p>Dolgozo fizetése: {{this.form.controls['dolgozoFizetes'].value}} ft</p>
+<p>Dolgozo beosztás: {{this.form.controls['dolgozoBeosztas'].value}}</p>
+
+<form [formGroup]="form">
+  <mat-form-field appearance="outline">
+    <mat-label>Dolgozó neve</mat-label>
+    <input matInput formControlName="dolgozoNev">
+    <mat-hint>A név vezetéknévből és keresztnévből áll.Legalább 10 karakter...</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Dolgozó életkora</mat-label>
+    <input matInput formControlName="dolgozoEletkor">
+    <mat-hint>A dolgozó életkora legalább 18 évet haladja meg...</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Dolgozó fizetése</mat-label>
+    <input matInput formControlName="dolgozoFizetes">
+    <mat-hint>Itt adhatja meg mennyit keresen a dolgozó...</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-select formControlName="dolgozoBeosztas">
+      <mat-option value="Rendszergazda">Rendszergazda</mat-option>
+      <mat-option value="Ügyvezető Igazgató">Ügyvezető Igazgató</mat-option>
+      <mat-option value="Marketing Manager">Marketing Manager</mat-option>
+      <mat-option value="Takaritó">Takarító</mat-option>
+      <mat-option value="Biztonsági Őr">Biztonsági Őr</mat-option>
+      <mat-option value="Irodai titkár">Irodai titkár</mat-option>
+      <mat-option value="Üzem orvos">Üzem orvos</mat-option>
+    </mat-select>
+    <mat-label>Dolgozó beosztása</mat-label>
+    <mat-hint>Itt adhatjuk meg mit fog dolgozni az adott személy</mat-hint>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary">Dolgozó regisztrálása</button>
+
+
+</form>
+
+
+<table mat-table [dataSource]="DolgozoTombObjektum">
+  <!-- Megjelöljük az adatforrást -->
+  <ng-container matColumnDef="nev">
+    <!-- Definiáljuk az oszlopokat -->
+    <mat-header-cell *matHeaderCellDef>Név</mat-header-cell><!-- Fejléc adatokat megadjuk -->
+    <mat-cell *matCellDef="let row">{{row.nev}}</mat-cell><!-- Oszlop adatokat megadjuk -->
+  </ng-container>
+
+  <ng-container matColumnDef="kor">
+    <mat-header-cell *matHeaderCellDef>Életkor</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{row.kor}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="fizetes">
+    <mat-header-cell *matHeaderCellDef>Fizetés</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{row.fizetes}}</mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="['nev','kor','fizetes']"></mat-header-row>
+  <mat-row *matRowDef="let row;columns:['nev','kor','fizetes']"></mat-row>
+</table>

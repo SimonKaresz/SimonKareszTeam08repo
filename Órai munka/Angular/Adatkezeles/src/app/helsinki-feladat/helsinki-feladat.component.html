@@ -23,15 +23,16 @@
     <label for="meretSelect">Csapat mérete(fő)</label>
   </div>
 
-  <!-- Szorgalmi feladat -->
+  <!-- Szorgalmi feladat-2022.05.26. -->
   <div class="form-floating m-3">
     <select class="form-select" id="sportokSelect">
 
-      <option *ngFor="let sportag of SportagakOpciok" value="1">{{sportag}}</option>
+      <option *ngFor="let eredmeny of Sportagak" value="1">{{eredmeny.sportagNeve}}</option>
 
     </select>
     <label for="sportokSelect">Sportágak</label>
   </div>
+
 </form>
 
 
@@ -72,3 +73,9 @@
     [{{eredmeny.sportag}} - {{eredmeny.versenySzam}}]
   </li>
 </ul> -->
+
+<ul>
+  <li *ngFor="let eredmeny of Sportagak">
+    {{eredmeny.sportagNeve}}:{{eredmeny.versenySzamok}}
+  </li>
+</ul>
